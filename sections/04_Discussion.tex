@@ -1,0 +1,44 @@
+\section{Discussion} % Approx word count = 500 words  (total = 3250)
+
+Comparing the results of this study with those of \cite{2019ApJ...884...38B}, there is qualitative agreement on the effects of case B mass transfer on $^{26}$Al wind yields:
+\begin{enumerate}
+    \item Both studies found that yields increased for the 20 M$_{\sun}$ primary but decreased for the 50 M$_{\sun}$ primary.
+    \item Yields were found to increase significantly for 20 M$_{\sun}$ systems, while the 50 \& 45 M$_{\sun}$ WR stars were found to have the same yields regardless of whether the stars transferred mass. This supports the initial mass function described by \cite{2019ApJ...884...38B}, which indicates that the effect of mass transfer on wind yields becomes negligible for systems with initial masses above $\sim$35 M$_{\sun}$ and mass ratio $0.5 < q < 0.9$.
+\end{enumerate}
+
+It is worth noting that this study generally finds much higher yields (by 1 or 2 orders of magnitude) for all simulations\footnote{Most simulations in \cite{2019ApJ...884...38B} use $\beta$ = 1, which would decrease primary yields. However, since the yield difference is also found in single star models, binary parameters cannot be the cause.} despite both studies evolving models up to the end of core helium-burning.
+\cite{2019ApJ...884...38B} discusses the potential effects of uncertainties in the main $^{26}$Al production channel: $^{25}$Mg$(p,\gamma)^{26}$Al, finding a 2 orders of magnitude shift in core $^{26}$Al abundance as the reaction rate is varied.
+It is thus likely that differences in the reaction rates used are the cause of the yield difference (or at least a major factor), but this has not been confirmed.
+
+\cite{2019ApJ...884...38B} also briefly\footnotemark investigates the effects of varying mass transfer efficiency $\beta$ on $^{26}$Al yield for a binary system with M$_1$ = 20 M$_{\sun}$, M$_2$ = 18 M$_{\sun}$, and P = 18.4 days. They found that primary yields increased linearly between $1.41\times10^{-6}$ and $2.00\times10^{-6}$ M$_{\sun}$ with decreasing $\beta$.
+\footnotetext{The scheme used treated the mass transfer as an instantaneous event. This assumption gives a good yield estimate, but ignores some of the complexities such as continued $^{26}$Al decay during RLOF.}
+A linear trend, though steeper, was also observed in this study: between $1.54\times10^{-4}$ and $2.80\times10^{-5}$ M$_{\sun}$.
+However, the more significant result was actually in the secondary stars, which showed a non-linear relationship with $\beta$ (see figure \ref{subfig:MTE2}) due to the increase in wind mass loss rates and surface $^{26}$Al composition in the mass-gaining stars.
+This meant that decreased primary yields actually corresponded to higher overall yields once both stars completed their evolution.
+Given the number of binary parameters to vary, more work is needed to explore how mass transfer efficiency affects the yields of other systems.
+
+\subsection{The Fate of Secondary Stars after RLOF}
+
+The binary simulations terminated at the end of core helium-burning in the primary, at which point its remaining lifetime is relatively short. Massive stars end their lives in a supernova, leaving behind either a neutron star or (for initial masses greater than $\sim$25 M$_{\sun}$) a black hole \citep[see][]{Carroll2007,Iliadis2015}.
+If the secondary does not merge with the primary before the supernova, there are three possible fates:
+\begin{enumerate}
+    \item The supernova destroys the secondary.
+    \item The secondary survives the supernova, remaining in an interacting binary system with the primary remnant.
+    \item The secondary survives the supernova, but is pushed far enough away that it completes its evolution without further binary interaction.
+\end{enumerate}
+
+Due to time limitations, and the inability to simulate contact binaries\footnotemark, this study focused on the third possibility.
+\cite{2015A&A...584A..11L} provides evidence that secondary stars can complete their evolution undisturbed even after their partner star reaches supernova. However, it was not determined that this evolution path was the correct one for the systems in question.
+Nonetheless, the high yields from continued secondary evolution point to a potential source of $^{26}$Al from massive binaries not immediately evident from just the primary star behaviour.
+\footnotetext{While contact binaries invalidate the spherical symmetry assumption used by STARS, mass-transfer from the secondary back to the primary \emph{could} be simulated in STARS and produce valid results as long as both STARS do not simultaneously fill their Roche lobes. This presents a promising subject for future work.}
+
+\subsection{Rotating vs non-rotating binaries}
+
+This study used non-rotating models for simplicity, but nearly all actual stars will experience some degree of rotation.
+The effects of rotation on stellar evolution for both single and binary stars is explored in \cite{2019EAS....82..137M}.
+One key difference relevant to $^{26}$Al is that rotating stars experience larger regions of homogenised composition due to rotational mixing.
+Depending on whether this mixing dilutes or enriches the $^{26}$Al content in the ejected material, it could lead to either increased or decreased yields. For binary stars, the effect will also depend on the timing of RLOF.
+
+In the case of the single 20 M$_{\sun}$ star (see figure \ref{subfig:50Msol_Al26_Sin}), a larger mixed region would enrich the material ejected by winds and produce a higher yield. In the binary counterpart (see figure \ref{subfig:50Msol_Al26_Bin}), it seems unlikely that a larger mixed region would affect yields since RLOF ejects the entire convective region and the layers below.
+Similarly, while WR stars are known to have very strong rotation \citep{Carroll2007}, the complete ejection of their envelope would likely render the effects of increased mixing irrelevant to the $^{26}$Al yields in both single and binary models.
+The results of this study should be taken as qualitatively representative of the effects of binary interactions, but future work is needed to fully quantify the effect of binary interactions on $^{26}$Al yields.

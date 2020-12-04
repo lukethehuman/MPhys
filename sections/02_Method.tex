@@ -1,0 +1,29 @@
+\section{Method} % Approx word count = 500 words
+
+% STARS Overview
+Non-rotating binary star systems were simulated using the stellar evolution and nucleosynthesis code STARS.
+STARS is a one-dimensional code capable of evolving stars up to core-collapse.
+The code simulates the evolution of both composition and structure of stellar models simultaneously to converge the model at each timestep.
+
+STARS was originally written by \cite{1971MNRAS.151..351E}, and has been updated many times since then \citep[e.g.][]{1995MNRAS.274..964P}.
+The version used here is from \cite{2009MNRAS.396.1699S}, who added the functionality to evolve binary systems.
+% This version follows the chemical evolution of 46 species (including both isomeric $^{26}$Al$^m$ \& ground state $^{26}$Al$^g$).
+
+STARS uses a simple diffusion model described in \cite{1972MNRAS.156..361E} to simulate mixing.
+Overshooting of convective region boundaries is used to compensate for the additional mixing found in observations (see \cite{1991A&AS...89..451M} for why this is necessary). Note that the additional observed mixing is likely to result from multiple effects, not just mixing beyond the theoretical boundaries \citep{2015A&A...575A.117S}.
+
+\subsection{Simulation Parameters} \label{Method2}
+
+% Simulation parameters
+The simulations were run using ZAMS stellar models; initial compositions were set to solar values.
+The mixing length (used for convective overshooting) was set to 2.0 in all simulations, after the Solar model calibrations used by \cite{2015A&A...575A.117S}.
+Preliminary testing on spacial and temporal resolution was done to maximise the speed of each run without sacrificing accuracy: all simulations in this study used 199 mesh points and variable timesteps.
+We use the updated Wolf-Rayet mass loss rates described in \cite{Eldridge2006}; this system uses rates from \cite{MassLossRates1} for OB stars, \cite{MassLossRates2} for pre-WR stars, and \cite{MassLossRates3} for WR stars.
+
+Mass transfer efficiency $\beta = 0.5$ is used, except where stated otherwise. Mass lost from the primary (through RLOF or winds) is accreted onto the secondary at this fraction.
+As mass is transferred, so is the angular momentum associated with that mass. This tends to increase the rotational velocity of the secondary star during mass transfer. As the angular frequency approaches a critical value, the mass loss rate increases while $\beta$ drops off rapidly. 
+The code's treatment of this phenomenon is discussed in detail in \cite{2009MNRAS.396.1699S}.
+
+% Stellar Model Parameters
+Single and binary star simulations were run for systems with initial primary masses 20 M$_{\sun}$ \& 50 M$_{\sun}$, with mass ratio $q$ = $\frac{M_2}{M_1}$ = 0.9 (i.e. initial secondary star masses of 18 M$_{\sun}$ \& 45 M$_{\sun}$). These values follow \cite{2019ApJ...884...38B}, to allow a direct comparison of results.
+Except where stated, the initial orbital periods used were P = 100 days for binaries and P = 10$^{77}$ for single stars\footnote{Note that when evolving two models at once, the code always treats both stars as existing in a binary system. Single star evolution is simulated by using an arbitrarily high period (and thus separation) which prevents interaction between the stars.}.
